@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reports - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📦 Inventory</h3>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="products.html">Products</a>
+        <a href="reports.html" class="active">Reports</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">Reports</div>
+        <p>Select Report:
+            <select>
+                <option>Weekly</option>
+                <option>Monthly</option>
+            </select>
+        </p>
+        <div class="chart-container">
+            <canvas id="reportChart"></canvas>
+        </div>
+        <button class="primary">Export PDF</button>
+        <button class="primary">Export CSV</button>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('reportChart');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Stock Usage',
+                    data: [50, 70, 40, 90],
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0,123,255,0.3)'
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Products - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📦 Inventory</h3>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="reports.html">Reports</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">Product Management</div>
+        <button class="primary" onclick="addProduct()">+ Add Product</button>
+        <table id="productTable">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Product A</td>
+                <td>3</td>
+                <td>Electronics</td>
+                <td class="low">Low</td>
+                <td><button onclick="editProduct(this)">✏️</button> <button onclick="deleteRow(this)">🗑️</button></td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Product B</td>
+                <td>20</td>
+                <td>Food</td>
+                <td class="in-stock">In Stock</td>
+                <td><button onclick="editProduct(this)">✏️</button> <button onclick="deleteRow(this)">🗑️</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

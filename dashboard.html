@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Smart Inventory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h3>📦 Inventory</h3>
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="products.html">Products</a>
+        <a href="reports.html">Reports</a>
+        <a href="login.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">Dashboard</div>
+        <div class="cards">
+            <div class="card">Total Products <h2>25</h2>
+            </div>
+            <div class="card warning">Low Stock Items <h2>3</h2>
+            </div>
+            <div class="card">Recent Updates <h2>5</h2>
+            </div>
+        </div>
+        <div class="chart-container">
+            <canvas id="stockChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('stockChart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Product A', 'Product B', 'Product C', 'Product D'],
+                datasets: [{
+                    label: 'Stock Levels',
+                    data: [3, 20, 15, 10],
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107', '#17a2b8']
+                }]
+            }
+        });
+    </script>
+</body>
+
+</html>
